@@ -31,7 +31,6 @@ private:
 	RotationType getRotationType(RBNode* node);
 public:
 	RB();
-	void insert_rec(int val, RBNode* node);
 	void insert(int val);
 	RBNode* find(int val, RBNode* node);
 	RBNode* find(int val);

@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/diego/eda/t3/avl
+CMAKE_SOURCE_DIR = /home/diego/eda/Tarea-3-EDA-Done/avl
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/diego/eda/t3/avl/build
+CMAKE_BINARY_DIR = /home/diego/eda/Tarea-3-EDA-Done/avl/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/diego/eda/t3/avl/build/CMakeFiles /home/diego/eda/t3/avl/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/diego/eda/Tarea-3-EDA-Done/avl/build/CMakeFiles /home/diego/eda/Tarea-3-EDA-Done/avl/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/diego/eda/t3/avl/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/diego/eda/Tarea-3-EDA-Done/avl/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test_avl
+# Target rules for targets named test
 
 # Build rule for target.
-test_avl: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_avl
-.PHONY : test_avl
+test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test
+.PHONY : test
 
 # fast build rule for target.
-test_avl/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_avl.dir/build.make CMakeFiles/test_avl.dir/build
-.PHONY : test_avl/fast
+test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
+.PHONY : test/fast
 
 src/avl.o: src/avl.cpp.o
 .PHONY : src/avl.o
 
 # target to build an object file
 src/avl.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_avl.dir/build.make CMakeFiles/test_avl.dir/src/avl.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/avl.cpp.o
 .PHONY : src/avl.cpp.o
 
 src/avl.i: src/avl.cpp.i
@@ -142,7 +142,7 @@ src/avl.i: src/avl.cpp.i
 
 # target to preprocess a source file
 src/avl.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_avl.dir/build.make CMakeFiles/test_avl.dir/src/avl.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/avl.cpp.i
 .PHONY : src/avl.cpp.i
 
 src/avl.s: src/avl.cpp.s
@@ -150,7 +150,7 @@ src/avl.s: src/avl.cpp.s
 
 # target to generate assembly for a file
 src/avl.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_avl.dir/build.make CMakeFiles/test_avl.dir/src/avl.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/avl.cpp.s
 .PHONY : src/avl.cpp.s
 
 src/avlNode.o: src/avlNode.cpp.o
@@ -158,7 +158,7 @@ src/avlNode.o: src/avlNode.cpp.o
 
 # target to build an object file
 src/avlNode.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_avl.dir/build.make CMakeFiles/test_avl.dir/src/avlNode.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/avlNode.cpp.o
 .PHONY : src/avlNode.cpp.o
 
 src/avlNode.i: src/avlNode.cpp.i
@@ -166,7 +166,7 @@ src/avlNode.i: src/avlNode.cpp.i
 
 # target to preprocess a source file
 src/avlNode.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_avl.dir/build.make CMakeFiles/test_avl.dir/src/avlNode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/avlNode.cpp.i
 .PHONY : src/avlNode.cpp.i
 
 src/avlNode.s: src/avlNode.cpp.s
@@ -174,7 +174,7 @@ src/avlNode.s: src/avlNode.cpp.s
 
 # target to generate assembly for a file
 src/avlNode.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_avl.dir/build.make CMakeFiles/test_avl.dir/src/avlNode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/avlNode.cpp.s
 .PHONY : src/avlNode.cpp.s
 
 tests/test.o: tests/test.cpp.o
@@ -182,7 +182,7 @@ tests/test.o: tests/test.cpp.o
 
 # target to build an object file
 tests/test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_avl.dir/build.make CMakeFiles/test_avl.dir/tests/test.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.cpp.o
 .PHONY : tests/test.cpp.o
 
 tests/test.i: tests/test.cpp.i
@@ -190,7 +190,7 @@ tests/test.i: tests/test.cpp.i
 
 # target to preprocess a source file
 tests/test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_avl.dir/build.make CMakeFiles/test_avl.dir/tests/test.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.cpp.i
 .PHONY : tests/test.cpp.i
 
 tests/test.s: tests/test.cpp.s
@@ -198,7 +198,7 @@ tests/test.s: tests/test.cpp.s
 
 # target to generate assembly for a file
 tests/test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_avl.dir/build.make CMakeFiles/test_avl.dir/tests/test.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.cpp.s
 .PHONY : tests/test.cpp.s
 
 # Help Target
@@ -209,7 +209,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... test_avl"
+	@echo "... test"
 	@echo "... src/avl.o"
 	@echo "... src/avl.i"
 	@echo "... src/avl.s"

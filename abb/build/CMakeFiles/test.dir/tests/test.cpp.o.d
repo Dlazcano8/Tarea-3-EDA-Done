@@ -1,6 +1,8 @@
-CMakeFiles/test_avl.dir/src/avl.cpp.o: /home/diego/eda/t3/avl/src/avl.cpp \
- /usr/include/stdc-predef.h /home/diego/eda/t3/avl/include/trees/avl.hpp \
- /home/diego/eda/t3/avl/include/trees/avlNode.hpp \
+CMakeFiles/test.dir/tests/test.cpp.o: \
+ /home/diego/eda/Tarea-3-EDA-Done/abb/tests/test.cpp \
+ /usr/include/stdc-predef.h \
+ /home/diego/eda/Tarea-3-EDA-Done/abb/include/trees/abb.hpp \
+ /home/diego/eda/Tarea-3-EDA-Done/abb/include/trees/abbNode.hpp \
  /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

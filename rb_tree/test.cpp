@@ -93,10 +93,10 @@ int main(int nargs, char** vargs) {
 
 //     tree->insert(61);
 
-//     // tree->traverse();
+//     tree->traverse();
 
 //     trees::RBNode* node = nullptr;
-//     node = tree->find(67);
+//     node = tree->find(90);
 
 //     tree->printInfo(node);
 

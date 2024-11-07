@@ -1,4 +1,4 @@
-# Install script for directory: /home/diego/eda/t3/abb
+# Install script for directory: /home/diego/eda/Tarea-3-EDA-Done/abb
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/diego/eda/t3/abb/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/diego/eda/Tarea-3-EDA-Done/abb/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

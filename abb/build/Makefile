@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/diego/eda/t3/abb
+CMAKE_SOURCE_DIR = /home/diego/eda/Tarea-3-EDA-Done/abb
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/diego/eda/t3/abb/build
+CMAKE_BINARY_DIR = /home/diego/eda/Tarea-3-EDA-Done/abb/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/diego/eda/t3/abb/build/CMakeFiles /home/diego/eda/t3/abb/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/diego/eda/Tarea-3-EDA-Done/abb/build/CMakeFiles /home/diego/eda/Tarea-3-EDA-Done/abb/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/diego/eda/t3/abb/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/diego/eda/Tarea-3-EDA-Done/abb/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test_abb
+# Target rules for targets named test
 
 # Build rule for target.
-test_abb: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_abb
-.PHONY : test_abb
+test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test
+.PHONY : test
 
 # fast build rule for target.
-test_abb/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_abb.dir/build.make CMakeFiles/test_abb.dir/build
-.PHONY : test_abb/fast
+test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
+.PHONY : test/fast
 
 src/abb.o: src/abb.cpp.o
 .PHONY : src/abb.o
 
 # target to build an object file
 src/abb.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_abb.dir/build.make CMakeFiles/test_abb.dir/src/abb.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/abb.cpp.o
 .PHONY : src/abb.cpp.o
 
 src/abb.i: src/abb.cpp.i
@@ -142,7 +142,7 @@ src/abb.i: src/abb.cpp.i
 
 # target to preprocess a source file
 src/abb.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_abb.dir/build.make CMakeFiles/test_abb.dir/src/abb.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/abb.cpp.i
 .PHONY : src/abb.cpp.i
 
 src/abb.s: src/abb.cpp.s
@@ -150,7 +150,7 @@ src/abb.s: src/abb.cpp.s
 
 # target to generate assembly for a file
 src/abb.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_abb.dir/build.make CMakeFiles/test_abb.dir/src/abb.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/abb.cpp.s
 .PHONY : src/abb.cpp.s
 
 src/abbNode.o: src/abbNode.cpp.o
@@ -158,7 +158,7 @@ src/abbNode.o: src/abbNode.cpp.o
 
 # target to build an object file
 src/abbNode.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_abb.dir/build.make CMakeFiles/test_abb.dir/src/abbNode.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/abbNode.cpp.o
 .PHONY : src/abbNode.cpp.o
 
 src/abbNode.i: src/abbNode.cpp.i
@@ -166,7 +166,7 @@ src/abbNode.i: src/abbNode.cpp.i
 
 # target to preprocess a source file
 src/abbNode.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_abb.dir/build.make CMakeFiles/test_abb.dir/src/abbNode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/abbNode.cpp.i
 .PHONY : src/abbNode.cpp.i
 
 src/abbNode.s: src/abbNode.cpp.s
@@ -174,7 +174,7 @@ src/abbNode.s: src/abbNode.cpp.s
 
 # target to generate assembly for a file
 src/abbNode.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_abb.dir/build.make CMakeFiles/test_abb.dir/src/abbNode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/abbNode.cpp.s
 .PHONY : src/abbNode.cpp.s
 
 tests/test.o: tests/test.cpp.o
@@ -182,7 +182,7 @@ tests/test.o: tests/test.cpp.o
 
 # target to build an object file
 tests/test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_abb.dir/build.make CMakeFiles/test_abb.dir/tests/test.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.cpp.o
 .PHONY : tests/test.cpp.o
 
 tests/test.i: tests/test.cpp.i
@@ -190,7 +190,7 @@ tests/test.i: tests/test.cpp.i
 
 # target to preprocess a source file
 tests/test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_abb.dir/build.make CMakeFiles/test_abb.dir/tests/test.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.cpp.i
 .PHONY : tests/test.cpp.i
 
 tests/test.s: tests/test.cpp.s
@@ -198,7 +198,7 @@ tests/test.s: tests/test.cpp.s
 
 # target to generate assembly for a file
 tests/test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_abb.dir/build.make CMakeFiles/test_abb.dir/tests/test.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.cpp.s
 .PHONY : tests/test.cpp.s
 
 # Help Target
@@ -209,7 +209,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... test_abb"
+	@echo "... test"
 	@echo "... src/abb.o"
 	@echo "... src/abb.i"
 	@echo "... src/abb.s"

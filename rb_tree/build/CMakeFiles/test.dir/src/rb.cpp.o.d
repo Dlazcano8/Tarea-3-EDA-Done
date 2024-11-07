@@ -1,7 +1,8 @@
-CMakeFiles/test.dir/src/rb.cpp.o: /home/diego/eda/t3/rb_tree/src/rb.cpp \
+CMakeFiles/test.dir/src/rb.cpp.o: \
+ /home/diego/eda/Tarea-3-EDA-Done/rb_tree/src/rb.cpp \
  /usr/include/stdc-predef.h \
- /home/diego/eda/t3/rb_tree/include/trees/rb.hpp \
- /home/diego/eda/t3/rb_tree/include/trees/rbNode.hpp \
+ /home/diego/eda/Tarea-3-EDA-Done/rb_tree/include/trees/rb.hpp \
+ /home/diego/eda/Tarea-3-EDA-Done/rb_tree/include/trees/rbNode.hpp \
  /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

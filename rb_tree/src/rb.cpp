@@ -18,9 +18,10 @@ RB::RB():root(nullptr) {
 void RB::balance(RBNode* node) {
     // Mientras el nodo no sea la raíz y el color de su padre sea rojo
     while (node != root && node->getParent()->getColor() == NodeColor::RED) {
-        // Caso en el que el padre es el hijo izquierdo del abuelo
-        if (node->getParent() == node->getGrandparent()->getLeft()) {
-            RBNode* uncle = node->getGrandparent()->getRight(); // El tío de `node`
+
+        // Padre Izquierdo
+        if (node->getParent()->isLeft()) {
+            RBNode* uncle = node->getUncle();
 
             // Caso 1: El tío es rojo
             if (uncle != nullptr && uncle->getColor() == NodeColor::RED) {
@@ -29,17 +30,17 @@ void RB::balance(RBNode* node) {
                 node->getGrandparent()->setColor(NodeColor::RED);
                 node = node->getGrandparent();
             } else {
-                // Caso 2: `node` es el hijo derecho
-                if (node == node->getParent()->getRight()) {
+                // Caso 2: Triangulo
+                if (node->isRight()) {
                     node = node->getParent();
                     leftRotation(node);
                 }
-                // Caso 3: `node` es el hijo izquierdo
+                // Caso 3: Linea
                 node->getParent()->setColor(NodeColor::BLACK);
                 node->getGrandparent()->setColor(NodeColor::RED);
                 rightRotation(node->getGrandparent());
             }
-        } else { // El caso simétrico cuando el padre es el hijo derecho del abuelo
+        } else { //Padre Derecho
             RBNode* uncle = node->getGrandparent()->getLeft(); // El tío de `node`
 
             // Caso 1: El tío es rojo
@@ -49,68 +50,32 @@ void RB::balance(RBNode* node) {
                 node->getGrandparent()->setColor(NodeColor::RED);
                 node = node->getGrandparent();
             } else {
-                // Caso 2: `node` es el hijo izquierdo
-                if (node == node->getParent()->getLeft()) {
+                // Caso 2: Triangulo
+                if (node->isLeft()) {
                     node = node->getParent();
                     rightRotation(node);
                 }
-                // Caso 3: `node` es el hijo derecho
+                // Caso 3:  Linea
                 node->getParent()->setColor(NodeColor::BLACK);
                 node->getGrandparent()->setColor(NodeColor::RED);
                 leftRotation(node->getGrandparent());
             }
         }
     }
-    // Asegúrate de que la raíz siempre sea negra
+
     root->setColor(NodeColor::BLACK);
 }
 
-
-
-void RB::insert_rec(int val, RBNode* node){
-
-	if (val < node->getData()){
-		if (node->getLeft() == nullptr){
-			node->setLeft(new RBNode(val, node));
-			node->getLeft()->setColor(NodeColor::RED);
-
-		}
-		else{
-			insert_rec(val, node->getLeft());
-		}
-
-		if (node->getColor() == NodeColor::RED){
-			balance(node->getLeft());
-		}
-
-
-	}
-	else{
-		if (node->getRight() == nullptr){
-			node->setRight(new RBNode(val, node));
-			node->getRight()->setColor(NodeColor::RED);
-		}
-		else{
-			insert_rec(val, node->getRight());
-		}
-
-		if (node->getColor() == NodeColor::RED){
-			balance(node->getRight());
-		}
-	}
-}
-
 void RB::insert(int data) {
-    // Crear un nuevo nodo Rojo-Negro con el valor `data`
+
     RBNode* new_node = new RBNode(data);
-    new_node->setColor(NodeColor::RED); // Por defecto, el nuevo nodo es rojo
+    new_node->setColor(NodeColor::RED); // Nuevo nodo rojo siempre
     new_node->setLeft(nullptr);
     new_node->setRight(nullptr);
 
     RBNode* parent = nullptr;
     RBNode* current = root;
 
-    // Inserción tipo BST (árbol binario de búsqueda)
     while (current != nullptr) {
         parent = current;
         if (new_node->getData() < current->getData()) {
@@ -120,10 +85,8 @@ void RB::insert(int data) {
         }
     }
 
-    // Establecer el padre del nuevo nodo
     new_node->setParent(parent);
 
-    // Si el árbol estaba vacío, el nuevo nodo se convierte en la raíz
     if (parent == nullptr) {
         root = new_node;
     } else if (new_node->getData() < parent->getData()) {
@@ -132,19 +95,17 @@ void RB::insert(int data) {
         parent->setRight(new_node);
     }
 
-    // Si el nuevo nodo es la raíz, se debe establecer como negro
     if (new_node->getParent() == nullptr) {
         new_node->setColor(NodeColor::BLACK);
         return;
     }
 
-    // Si el abuelo es nulo, no hay necesidad de balancear
     if (new_node->getGrandparent() == nullptr) {
         return;
     }
 
-    // Llamar a la función de balanceo para mantener las propiedades del árbol Rojo-Negro
     balance(new_node);
+
 }
 
 

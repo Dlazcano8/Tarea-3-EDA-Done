@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/diego/eda/t3/abb/src/abb.cpp" "CMakeFiles/test_abb.dir/src/abb.cpp.o" "gcc" "CMakeFiles/test_abb.dir/src/abb.cpp.o.d"
-  "/home/diego/eda/t3/abb/src/abbNode.cpp" "CMakeFiles/test_abb.dir/src/abbNode.cpp.o" "gcc" "CMakeFiles/test_abb.dir/src/abbNode.cpp.o.d"
-  "/home/diego/eda/t3/abb/tests/test.cpp" "CMakeFiles/test_abb.dir/tests/test.cpp.o" "gcc" "CMakeFiles/test_abb.dir/tests/test.cpp.o.d"
+  "/home/diego/eda/Tarea-3-EDA-Done/abb/src/abb.cpp" "CMakeFiles/test.dir/src/abb.cpp.o" "gcc" "CMakeFiles/test.dir/src/abb.cpp.o.d"
+  "/home/diego/eda/Tarea-3-EDA-Done/abb/src/abbNode.cpp" "CMakeFiles/test.dir/src/abbNode.cpp.o" "gcc" "CMakeFiles/test.dir/src/abbNode.cpp.o.d"
+  "/home/diego/eda/Tarea-3-EDA-Done/abb/tests/test.cpp" "CMakeFiles/test.dir/tests/test.cpp.o" "gcc" "CMakeFiles/test.dir/tests/test.cpp.o.d"
   )
 
 # Targets to which this target links.

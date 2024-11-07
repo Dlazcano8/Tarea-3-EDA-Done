@@ -9,8 +9,8 @@ LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-add_executable(test_abb tests/test.cpp src/abbNode.cpp src/abb.cpp)
-target_include_directories(test_abb PUBLIC ${PROJECT_SOURCE_DIR}/include)
+add_executable(test tests/test.cpp src/abbNode.cpp src/abb.cpp)
+target_include_directories(test PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
 
 

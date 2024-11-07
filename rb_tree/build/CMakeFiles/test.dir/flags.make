@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/g++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/diego/eda/t3/rb_tree/include
+CXX_INCLUDES = -I/home/diego/eda/Tarea-3-EDA-Done/rb_tree/include
 
 CXX_FLAGS = -std=gnu++11
 

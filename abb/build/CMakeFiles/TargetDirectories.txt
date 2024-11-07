@@ -1,3 +1,3 @@
-/home/diego/eda/t3/abb/build/CMakeFiles/test_abb.dir
-/home/diego/eda/t3/abb/build/CMakeFiles/edit_cache.dir
-/home/diego/eda/t3/abb/build/CMakeFiles/rebuild_cache.dir
+/home/diego/eda/Tarea-3-EDA-Done/abb/build/CMakeFiles/test.dir
+/home/diego/eda/Tarea-3-EDA-Done/abb/build/CMakeFiles/edit_cache.dir
+/home/diego/eda/Tarea-3-EDA-Done/abb/build/CMakeFiles/rebuild_cache.dir

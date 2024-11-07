@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/diego/eda/t3/avl/src/avl.cpp" "CMakeFiles/test_avl.dir/src/avl.cpp.o" "gcc" "CMakeFiles/test_avl.dir/src/avl.cpp.o.d"
-  "/home/diego/eda/t3/avl/src/avlNode.cpp" "CMakeFiles/test_avl.dir/src/avlNode.cpp.o" "gcc" "CMakeFiles/test_avl.dir/src/avlNode.cpp.o.d"
-  "/home/diego/eda/t3/avl/tests/test.cpp" "CMakeFiles/test_avl.dir/tests/test.cpp.o" "gcc" "CMakeFiles/test_avl.dir/tests/test.cpp.o.d"
+  "/home/diego/eda/Tarea-3-EDA-Done/avl/src/avl.cpp" "CMakeFiles/test.dir/src/avl.cpp.o" "gcc" "CMakeFiles/test.dir/src/avl.cpp.o.d"
+  "/home/diego/eda/Tarea-3-EDA-Done/avl/src/avlNode.cpp" "CMakeFiles/test.dir/src/avlNode.cpp.o" "gcc" "CMakeFiles/test.dir/src/avlNode.cpp.o.d"
+  "/home/diego/eda/Tarea-3-EDA-Done/avl/tests/test.cpp" "CMakeFiles/test.dir/tests/test.cpp.o" "gcc" "CMakeFiles/test.dir/tests/test.cpp.o.d"
   )
 
 # Targets to which this target links.
