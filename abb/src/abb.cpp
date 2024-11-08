@@ -14,60 +14,87 @@ ABB::ABB():root(nullptr) {
 	// TODO Auto-generated constructor stub
 }
 
-void ABB::insert_rec(int val, ABBNode* node){
-	if (val < node->getData()){
-		//LEFT
-		if (node->getLeft() == nullptr){
-			node->setLeft(new ABBNode(val));
-			//std::cout<<val << " inserted on left" << std::endl;
-		}
-		else{
-			insert_rec(val, node->getLeft());
-		}
-	}
-	else{
-		//RIGHT
-		if (node->getRight() == nullptr){
-			node->setRight(new ABBNode(val));
-			//std::cout<<val << " inserted on right" << std::endl;
-		}
-		else{
-			insert_rec(val, node->getRight());
-		}
-	}
+// void ABB::insert_rec(int val, ABBNode* node){
+// 	if (val < node->getData()){
+// 		//LEFT
+// 		if (node->getLeft() == nullptr){
+// 			node->setLeft(new ABBNode(val));
+// 			//std::cout<<val << " inserted on left" << std::endl;
+// 		}
+// 		else{
+// 			insert_rec(val, node->getLeft());
+// 		}
+// 	}
+// 	else{
+// 		//RIGHT
+// 		if (node->getRight() == nullptr){
+// 			node->setRight(new ABBNode(val));
+// 			//std::cout<<val << " inserted on right" << std::endl;
+// 		}
+// 		else{
+// 			insert_rec(val, node->getRight());
+// 		}
+// 	}
+// }
+
+// void ABB::insert(int val){
+// 	if (root == nullptr){
+// 		root = new ABBNode(val);
+// 	}
+// 	else{
+// 		insert_rec(val, root);
+// 	}
+// }
+
+void ABB::insert(int data) {
+
+    ABBNode* new_node = new ABBNode(data);
+    // new_node->setLeft(nullptr);
+    // new_node->setRight(nullptr);
+
+    ABBNode* parent = nullptr;
+    ABBNode* current = root;
+
+    while (current != nullptr) {
+        parent = current;
+        if (new_node->getData() < current->getData()) {
+            current = current->getLeft();
+        } else {
+            current = current->getRight();
+        }
+    }
+
+    if (parent == nullptr) {
+        root = new_node;
+    } else if (new_node->getData() < parent->getData()) {
+        parent->setLeft(new_node);
+    } else {
+        parent->setRight(new_node);
+    }
+
 }
 
-void ABB::insert(int val){
-	if (root == nullptr){
-		root = new ABBNode(val);
-	}
-	else{
-		insert_rec(val, root);
-	}
+
+ABBNode* ABB::find(int val, ABBNode* node) {
+    ABBNode* ans = nullptr;
+    if (node == nullptr) {
+        return nullptr; 
+    }
+
+    if (node->getData() == val) {
+        ans = node; 
+    } else {
+        if (val < node->getData()) {
+            ans = find(val, node->getLeft()); 
+        } else {
+            ans = find(val, node->getRight()); 
+        }
+    }
+    return ans;
 }
 
-ABBNode* ABB::find_rec(int val, ABBNode* node){
-	ABBNode* ans = nullptr;
-
-	if (node->getData() == val){
-		ans = node;
-	}
-	else{
-		if (val < node->getData()){
-			ans = find_rec(val, node->getLeft());
-		}
-		else{
-			ans = find_rec(val, node->getRight());
-		}
-	}
-
-	return ans;
-}
-
-ABBNode* ABB::find(int val){
-	ABBNode* ans = nullptr;
-	ans = find_rec(val, root);
-	return ans;
+ABBNode* ABB::find(int val) {
+    return find(val, root); // Llama a la función con el nodo raíz
 }
 
 void ABB::traverse_rec(ABBNode* node, int level){

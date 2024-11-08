@@ -31,7 +31,7 @@ private:
 	RotationType getRotationType(AVLNode* node);
 public:
 	AVL();
-	void insert_rec(int val, AVLNode* node);
+	void insert(int val, AVLNode* node);
 	void insert(int val);
 	AVLNode* find_rec(int val, AVLNode* node);
 	AVLNode* find(int val);

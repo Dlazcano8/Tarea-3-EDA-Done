@@ -17,9 +17,9 @@ private:
 	ABBNode* root;
 public:
 	ABB();
-	void insert_rec(int val, ABBNode* node);
+	//void insert(int val, ABBNode* node);
 	void insert(int val);
-	ABBNode* find_rec(int val, ABBNode* node);
+	ABBNode* find(int val, ABBNode* node);
 	ABBNode* find(int val);
 	void traverse_rec(ABBNode* node, int level);
 	void traverse();

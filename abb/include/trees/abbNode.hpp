@@ -23,6 +23,9 @@ public:
 	void setRight(ABBNode* node);
 	void setData(int val);
 	void setSize(int s);
+
+	bool hasSons(ABBNode* node);
+
 	ABBNode* getLeft();
 	ABBNode* getRight();
 	int getData();

@@ -158,26 +158,26 @@ void AVL::insert(int val){
 	}
 }
 
-AVLNode* AVL::find_rec(int val, AVLNode* node){
-	AVLNode* ans = nullptr;
-	if (node->getData() == val){
-		ans = node;
-	}
-	else{
-		if (val < node->getData()){
-			find_rec(val, node->getLeft());
-		}
-		else{
-			find_rec(val, node->getRight());
-		}
-	}
-	return ans;
+AVLNode* AVL::find(int val, AVLNode* node) {
+    AVLNode* ans = nullptr;
+    if (node == nullptr) {
+        return nullptr; 
+    }
+
+    if (node->getData() == val) {
+        ans = node; 
+    } else {
+        if (val < node->getData()) {
+            ans = find(val, node->getLeft()); 
+        } else {
+            ans = find(val, node->getRight()); 
+        }
+    }
+    return ans;
 }
 
-AVLNode* AVL::find(int val){
-	AVLNode* ans = nullptr;
-	ans = find_rec(val, root);
-	return ans;
+AVLNode* AVL::find(int val) {
+    return find(val, root); // Llama a la función con el nodo raíz
 }
 
 void AVL::traverse_rec(AVLNode* node, int label){

@@ -1,27 +1,68 @@
 #include "trees/abb.hpp"
+#include "trees/abbNode.hpp"
+#include <string>
+#include <fstream>
 #include <iostream>
 
-int main(int nargas, char** vargs){
-	trees::ABB abb;
-	abb.insert(16);
-	abb.insert(4);
-	abb.insert(2);
-	abb.insert(20);
-	abb.insert(15);
-	abb.insert(18);
-	abb.insert(35);
-	abb.insert(50);
-	//abb.showASC();
-	abb.updateSize();
-	abb.traverse();
+#include <chrono>
 
-	trees::ABBNode* node = nullptr;
-	for (int k = 1; k<= 8; k++ ){
-		node = abb.k_element(k);
-		if (node != nullptr){
-			std::cout << "k = " <<k << " --> "<< node->getData() << std::endl;
-		}
-	}
+using namespace std;
 
-	return 0;
+int* readKeysFromFile(std::string filename, int* n_keys){
+    std::ifstream  fin(filename, std::ios::binary); 
+    char* val = new char[4];
+    int n = 0;
+    fin.read(val, 4);
+    while (!fin.eof()){
+        n = n + 1;        
+        fin.read(val, 4);
+    }
+    fin.close();
+    fin.open(filename, std::ios::binary); 
+    int* keys = new int[n];
+    for(int i=0; i < n; i++){
+        fin.read(val, 4);
+        keys[i] = *reinterpret_cast<int*>(val);
+    }
+    fin.close();
+    *n_keys = n;
+    delete[] val;
+    return keys;
+}
+
+
+int main(int nargs, char** vargs) {
+    if (nargs < 2) {
+        std::cerr << "Uso: " << vargs[0] << " <archivo.bin>" << std::endl;
+        return 1;
+    }
+
+    std::string filename = vargs[1];
+    int n_keys; // Variable para almacenar el número de claves
+
+    int* keys = readKeysFromFile(filename, &n_keys);
+
+    if (keys != nullptr) {
+        trees::ABB* tree = new trees::ABB();
+
+        auto start = std::chrono::high_resolution_clock::now();
+
+        for (int i = 0; i < n_keys; i++) {
+            tree->insert(keys[i]);
+        }
+
+        auto end = std::chrono::high_resolution_clock::now();
+
+        auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+
+        std::cout << "Tiempo de inserción: " << duration.count() << " ms" << std::endl;
+
+        // Liberar la memoria asignada
+        delete[] keys;
+        delete tree;
+    } else {
+        std::cerr << "Error al leer el archivo." << std::endl;
+    }
+
+    return 0;
 }

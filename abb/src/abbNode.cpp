@@ -60,4 +60,8 @@ ABBNode::~ABBNode() {
 	}
 }
 
+bool ABBNode::hasSons(ABBNode* node){
+	return (node->getLeft() != nullptr) || (node->getRight() != nullptr);
+}
+
 } /* namespace trees */
